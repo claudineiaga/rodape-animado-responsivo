@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #272e35e0;
+}
+svg{
+    width: 100vw;
+}
+footer{
+    width: 100vw;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 3rem;
+    justify-content: center;
+    overflow: hidden;
+    position: absolute;
+    width: 100vw;
+    height: 400px;
+    bottom: 0;
+    filter: url("#goo");
+}
+footer h1{
+    z-index: 2;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    font-size: 20px;
+}
+footer::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 225px;
+    clip-path: url("#wave");
+    background-color: #604c5d;
+}
+@media only screen and (max-width: 700px) {
+    footer::after {
+        height: 150px;
+    }
+}
+footer .bola{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #1d1304;
+    position: absolute;
+    animation: bola 5s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+}
+@media only screen and (max-width: 700px) {
+    footer .bola {
+        animation: bola-pequena 5s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    }
+}
+@media only screen and (max-width: 200px) {
+    footer .bola {
+        animation: bola-pequena 5s cubic-bezier(0.18, 0.89, 0.32, 1.28) infinite;
+    }
+}
+@keyframes bola {
+    0% {
+        bottom: 0px;
+        width: 100px;
+        height: 100px;
+    }
+
+    50% {
+        bottom: 200px;
+    }
+
+    100% {
+        bottom: 0px;
+        width: 0px;
+        height: 0px;
+    }
+}
+@keyframes bola-pequena {
+    0% {
+        bottom: 0px;
+        width: 100px;
+        height: 100px;
+    }
+
+    50% {
+        bottom: 150px;
+    }
+
+    100% {
+        bottom: 0px;
+        width: 0px;
+        height: 0px;
+    }
+}
